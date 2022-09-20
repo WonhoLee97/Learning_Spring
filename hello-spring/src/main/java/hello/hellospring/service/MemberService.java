@@ -9,15 +9,17 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.Optional;
 
-@Service //스프링에 올릴 때 등록해줌
+//@Service //스프링에 올릴 때 등록해줌
 public class MemberService {
-    private final MemberRepository memberRepository;
+    private MemberRepository memberRepository;
+
+
     @Autowired //같은 원리로 Repository 객체를 가져와서 넣어줌
     public MemberService(MemberRepository memberRepository){
         this.memberRepository=memberRepository;
     }
 
-    public Long join(Member member){ //회원가입
+    public Long join(Member     member){ //회원가입
         //같은 이름이 있는 중복 회원 X
         //Optional<Member> result = memberRepository.findByName(member.getName());
         validateDuplicateMember(member);
