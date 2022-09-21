@@ -1,7 +1,16 @@
 package hello.hellospring.domain;
 
+//ORM Object Relational Mapping
+
+import javax.persistence.*;
+
+@Entity
 public class Member {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY) //DB가 알아서 Index생성
     private Long id;
+
     private String name;
 
     public Long getId() {
