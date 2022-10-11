@@ -4,3 +4,7 @@ spring:
     username: wono
     password:
     driver-class-name: org.h2.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: validate
